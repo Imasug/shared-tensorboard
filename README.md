@@ -1,6 +1,6 @@
 # CF-R&D TensorBoard
 
-cf-rd-colabアカウントのtensorboardディレクトリをリスニングするTensorBoard
+cf-rd-colabアカウントのtf-logsディレクトリをリスニングするTensorBoard
 
 * https://www.tensorflow.org/tensorboard/get_started?hl=ja
 * https://rclone.org/
