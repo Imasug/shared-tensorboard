@@ -1,7 +1,13 @@
 FROM python
 
-RUN pip install tensorboard && mkdir -p /tf-logs
+RUN apt update && apt install -y cron && \
+    pip install tensorboard && mkdir -p /tf-logs && \
+    curl https://rclone.org/install.sh | bash
 
 EXPOSE 6006
 
-ENTRYPOINT [ "tensorboard", "--logdir", "/tf-logs", "--port=6006", "--host=0.0.0.0" ]
+WORKDIR /app
+COPY . .
+RUN chmod +x run.sh
+
+CMD ["./run.sh"]
