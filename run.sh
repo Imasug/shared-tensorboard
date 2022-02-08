@@ -4,6 +4,6 @@ tensorboard --logdir /tf-logs --port 6006 --host 0.0.0.0 &
 
 while true
 do
-  rclone sync :${RCLONE_TYPE}:tf-logs /tf-logs ${RCLONE_SYNC_ARGS}
+  rclone sync :${BACKEND}:tf-logs /tf-logs
   sleep 60
 done
